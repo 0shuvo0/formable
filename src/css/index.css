@@ -1,0 +1,377 @@
+:root{
+  --primary-color: #8700f5;
+  --clr-red: #ee0014;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+a{
+  text-decoration: none;
+}
+
+
+.btn{
+  border: none;
+  outline: none;
+  padding: 1em 2em;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 3px 5px #cfcfcf;
+  display: inline-block;
+}
+label.btn{
+  display: inline-block;
+  width: fit-content;
+  max-width: auto;
+  padding: .5em 1em;
+  font-size: .9em;
+  font-weight: normal;
+}
+.btn:hover{
+  box-shadow: 0 1px 2px #cfcfcf;
+}
+
+.modal{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content{
+  background-color: #fff;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2em;
+  border-radius: 3px;
+  position: relative;
+  animation: 0.3s pop linear;
+}
+.modal-content.preview{
+  max-width: 600px;
+}
+.modal-content.preview .grey-container{
+  margin-bottom: 0;
+  background-color: transparent;
+}
+@keyframes pop{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.modal-content .close{
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  color: var(--clr-red);
+  cursor: pointer;
+}
+
+
+.heading{
+  font-size: 2,5em;
+  text-transform: capitalize;
+}
+
+
+.container{
+  --container-px: 10vw;
+  padding: 0 var(--container-px);
+}
+.container.main{
+  padding: 3vw var(--container-px);
+}
+
+
+.navbar{
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 2px 5px #b8b8b8;
+}
+.navbar .brand{
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.navbar .nav span a, .navbar .nav span span{
+  color: #fff;
+  margin: 0 2vw;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+.navbar .nav a:hover, .navbar .nav span:hover{
+  opacity: 1;
+}
+
+
+.section{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.section img, .section .content{
+  width: 50%;
+}
+.section h1{
+  font-size: 3em;
+}
+.section p{
+  margin: 2vw 0;
+  color: rgb(122, 122, 122);
+  letter-spacing: 1px;
+}
+.section p .li{
+  border-left: 5px solid var(--primary-color);
+  padding: 3px 0 3px 5px;
+}
+.section a{
+  font-size: .8em;
+}
+
+
+.form{
+  margin: 2em 0;
+}
+
+
+.grey-container{
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.add-field-container p{
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.add-field-container .btn{
+  margin: 0 0.5em 0.5em 0;
+}
+
+
+.input{
+  margin-bottom: 1.5em;
+}
+.input label, .input input, .input textarea{
+  display: block;
+}
+.input label{
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.input input, .input textarea{
+  outline: none;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px solid #000;
+}
+.input textarea{
+  min-height: 100px;
+}
+.input.inline{
+  display: flex;
+  align-items: center;
+}
+.input.inline label{
+  margin-right: 1em;
+}
+.input.inline label, .input.inline input{
+  display: inline;
+  width: auto;
+}
+input.file{
+  display: none;
+}
+.file-field{
+  display: flex;
+  align-items: center;
+}
+.file-field label{
+  margin-right: 1em;
+}
+
+
+.cards-container{
+  margin-top: 2em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
+}
+.cards-container.submissions{
+  grid-template-columns: repeat( auto-fit, minmax(500px, 1fr) );
+}
+.card{
+  padding: 1em;
+  box-shadow: 0 2px 5px #b8b8b8;
+  border-radius: 5px;
+}
+.card .title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-date{
+  font-size: 0.6em;
+  font-weight: normal;
+  color: #999;
+}
+.card-nav{
+  text-align: right;
+  padding-top: 0.5em;
+}
+.card-nav .nav-item{
+  margin-left: 0.5em;
+  background-color: rgba(5, 104, 252, 0.1);
+  color: rgba(5, 104, 252, 1);
+  padding: 0.5em 1em;
+  display: inline-block;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.card-nav .nav-item:nth-child(2){
+  background-color: rgba(0, 243, 32, 0.1);
+  color: rgb(0, 165, 22);
+}
+.card-nav .nav-item:nth-child(3){
+  background-color: rgba(243, 0, 0, 0.1);
+  color: rgba(243, 0, 0, 1);
+}
+
+.msg{
+  text-align: center;
+  color:#7e7d7d;
+}
+
+
+.progress-bar{
+  width: 100%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin: 0.5em 0;
+  border-radius: 3px;
+}
+.progress-bar .progress{
+  height: 100%;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: width 0.15s;
+  border-radius: 3px;
+}
+
+
+
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+.b{
+  font-weight: bold;
+}
+
+.p-1{
+  padding: 1em;
+}
+
+.mt-1{
+  margin-top: 1em;
+}
+.mb-0{
+  margin-bottom: 0;
+}
+.mb-1{
+  margin-bottom: 1em;
+}
+.mb-2{
+  margin-bottom: 2em;
+}
+.mr-1{
+  margin-right: 1em;
+}
+
+.err{
+  color: var(--clr-red);
+}
+
+.alt{
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.5em;
+  text-decoration: underline;
+}
+
+.link{
+  color: var(--primary-color);
+  word-wrap: break-word;
+}
+
+.spinner{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 5px solid var(--primary-color);
+  border-left: 5px solid transparent;
+  border-radius: 50%;
+  animation: 0.5s spin linear infinite;
+}
+.spinner.white{
+  border: 5px solid #fff;
+  border-left: 5px solid transparent;
+}
+.spinner.red{
+  border: 5px solid rgba(243, 0, 0, 1);
+  border-left: 5px solid transparent;
+}
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+@media(max-width: 767px){
+  .section img, .section .content{
+    width: 100%;
+  }
+  .section .content{
+    text-align: center;
+  }
+}
+@media(max-width: 450px){
+  .container{
+    --container-px: 3vw;
+  }
+}
