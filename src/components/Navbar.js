@@ -15,7 +15,7 @@ function Navbar(){
                 history.push("/")
             }
         }else{
-            if(location.pathname !== "/signup" && location.pathname !== "/login" && location.pathname.slice(0, 5) !== "/fill"){
+            if(location.pathname === "/create" || location.pathname.slice(0, 12) === "/submissions"){
                 history.push("/login")
             }
         }

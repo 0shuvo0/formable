@@ -17,11 +17,11 @@ function Home(){
             <div className="content">
                 <h1>Why choose us</h1>
                 <p>
-                    <p className="li">Easy to use</p>
-                    <p className="li">100% free</p>
-                    <p className="li">Share with friends</p>
-                    <p className="li">No login required for submitting form</p>
-                    <p className="li">Supports media file</p>
+                    <span className="li">Easy to use</span>
+                    <span className="li">100% free</span>
+                    <span className="li">Share with friends</span>
+                    <span className="li">No login required for submitting form</span>
+                    <span className="li">Supports media file</span>
                 </p>
             </div>
             <img src={features} alt="features" />
