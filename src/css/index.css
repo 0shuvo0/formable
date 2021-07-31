@@ -27,6 +27,7 @@ a{
   text-transform: uppercase;
   box-shadow: 0 3px 5px #cfcfcf;
   display: inline-block;
+  letter-spacing: 1px;
 }
 label.btn{
   display: inline-block;
