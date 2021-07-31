@@ -96,7 +96,7 @@ label.btn{
 
 
 .container{
-  --container-px: 10vw;
+  --container-px: 15vw;
   padding: 0 var(--container-px);
 }
 .container.main{
@@ -284,8 +284,32 @@ input.file{
   height: 100%;
   width: 0;
   background-color: var(--primary-color);
-  transition: width 0.15s;
+  transition: width 0.2s;
   border-radius: 3px;
+}
+
+
+
+.footer{
+  background-color: var(--primary-color);
+  color: #fff;
+  padding-top: max(1.5em, 2vw);
+  padding-bottom: max(1.5em, 2vw);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.footer .title{
+  color: #fff;
+  font-weight: bold;
+}
+.footer .li{
+  margin-top: 0.5em;
+  display: block;
+  color: #fff;
+}
+.footer a.li{
+  text-decoration: underline;
+  letter-spacing: 2px;
 }
 
 
@@ -364,16 +388,38 @@ input.file{
 }
 
 
+@media(max-width: 1050px){
+  .container{
+    --container-px: 10vw;
+  }
+}
 @media(max-width: 767px){
+  .container{
+    --container-px: 6vw;
+  }
   .section img, .section .content{
     width: 100%;
   }
   .section .content{
     text-align: center;
   }
+  .footer{
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media(max-width: 450px){
   .container{
     --container-px: 3vw;
+  }
+  .footer{
+    grid-template-columns: 1fr;
+  }
+  .footer > div{
+    margin-top: 1em;
+    text-align: center;
+  }
+  .footer > div:nth-child(1){
+    margin-top: 0;
+    margin-bottom: 1em;
   }
 }

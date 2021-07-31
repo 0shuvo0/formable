@@ -32,7 +32,7 @@ export const getDateFromMillis = milliseconds => {
 export const expired = (createDateMillis, hours) => {
     if(!hours) return false
     let currentDateMillis = +(new Date())
-    let hoursMillis = hours * 60 * 60 * 1000
+    let hoursMillis = parseInt(hours) * 60 * 60 * 1000
     return (currentDateMillis - createDateMillis) < hoursMillis
 }
 

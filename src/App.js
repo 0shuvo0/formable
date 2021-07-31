@@ -5,6 +5,7 @@ import {
 } from "react-router-dom"
 
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 //Importing pages
 import Home from "./pages/Home"
@@ -32,6 +33,7 @@ function App() {
             </Switch>
           </div>
         </Router>
+        <Footer />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { uploadFile } from "../db"
 function FileField({ fieldModel, onCompleted }){
     const [selectedFileName, setSelectedFileName] = useState("")
     const [progress, setProgress] = useState(0)
+    const [showPregress, setShowProgress] = useState(false)
     const [err, setErr] = useState("")
 
     const handleFile = async e => {
@@ -18,6 +19,8 @@ function FileField({ fieldModel, onCompleted }){
         if(fieldModel.accepted.indexOf(ext) === -1) return setErr("Choose file with thoe following extensions: " + fieldModel.accepted.join(", "))
         //chechk if file size is biggern than  2MB
         if(file.size > 2*1024*1024) return setErr("File size should be less than than 2MB")
+
+        setShowProgress(true)
 
         setSelectedFileName(file.name)
         let fileName = +(new Date()) + "-" + file.name
@@ -39,7 +42,7 @@ function FileField({ fieldModel, onCompleted }){
                 <label className="btn" htmlFor={fieldModel.title.replace(" ", "")}>choose file</label>
                 <span>{selectedFileName}</span>
             </div>
-            { progress > 0 && (
+            { showPregress && (
             <div className="progress-bar">
                 <div className="progress" style={{width: progress + "%"}}></div>
             </div> )}

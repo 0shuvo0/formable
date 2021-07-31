@@ -15,7 +15,7 @@ function Navbar(){
                 history.push("/")
             }
         }else{
-            if(location.pathname === "/create" || location.pathname.slice(0, 12) === "/submissions"){
+            if(location.pathname === "/create" || location.pathname === "/forms" || location.pathname.slice(0, 12) === "/submissions"){
                 history.push("/login")
             }
         }
