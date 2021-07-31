@@ -144,6 +144,9 @@ label.btn{
 .section h1{
   font-size: 3em;
 }
+.section h1 span{
+  color: var(--primary-color);
+}
 .section p{
   margin: 2vw 0;
   color: rgb(122, 122, 122);
